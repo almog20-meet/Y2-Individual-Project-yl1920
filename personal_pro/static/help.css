@@ -1,0 +1,88 @@
+
+h1 {font-family: "Verdana", Sans-serif}
+.header {
+	color:red;
+	margin-top: 50px; 
+	text-align: center; 
+	font-size: 50px 
+}
+
+.logo {
+	margin-top: 30px;
+	margin-right: 45px;
+	width: 120px;
+	height: 120px; 
+}
+
+.video {
+	width: 600px;
+	height: 400px;
+	text-align: center;
+	padding-right: 600px
+}
+
+.* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width:40%;
+  padding: 30px 20px 30px 40px;
+
+}
+
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #444;
+  color: white;
+  height: 700px; 
+  width: 850px
+
+}
+
+.fa {font-size:50px;}
+
+.p {
+	word-spacing: 2px;
+	letter-spacing: 4px;
+	line-height: 1.5;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px
+}
+
+.bgimg {
+  background-image: url('static/247.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
+	margin-top: 0px;
+	margin-right: 40px;
+	width: 120px;
+	height: 120px;
+}

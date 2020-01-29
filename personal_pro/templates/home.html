@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<title>911</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+<body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-black" >
+  <div >
+
+
+  <div class="row">
+  <div herf="/home" class=" logo w3-display-right w3-xlarge bgimg" >
+    <img class="logo" src="{{url_for('static',filename='247.jpg')}}">
+  </div>
+   <div class=" logo w3-display-left w3-xlarge bgimg" style="padding-left: 40px" >
+    <img class="logo" src="{{url_for('static',filename='ear.jpg')}}">
+  </div>
+  </div>
+
+    <div style="text-align: center; margin-top: 10%">
+    <h1 class="size200 w3-animate-top w3-text-red  "  style="font-size: 270px"> 911</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <button class="w3-xxxlarge w3-center btn open-button" style="margin-top: 40px; width: 250px; border-color: black" onclick="runChat();">get help</button>
+
+    <!-- container element in which TalkJS will display a chat UI -->
+    <div id="talkjs-container" style="width: 400px; margin: 30px; height: 0px; size: 60%;"><i></i></div>
+    </div>
+
+
+    <div class="container-fluid text-center">
+  <!-- buttons -->
+      <div class="row" style="margin-top: 12%">
+
+        <div class="col-sm-4 " >
+        <a href="/aid"> <button class="btn button " style="font-size: 25px"> <strong> FIRST AID </strong> </button> </a> 
+        </div>
+
+        <div class="col-sm-4">
+          <a href="/police"> <button class="btn button" style="font-size: 25px"> <strong> POLICE </strong> </button> </a>
+        </div>
+
+        <div class="col-lg-4">
+         <a href="/fire"> <button class="btn button" style="font-size: 25px"><strong> FIRE </strong> </button> </a>
+        </div>
+      </div>
+    </div>
+  
+
+  </div>
+</div>
+
+
+
+<center>
+<!-- minified snippet to load TalkJS without delaying your page -->
+<script>
+(function(t,a,l,k,j,s){
+s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
+;k=t.Promise;t.Talk={v:2,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
+.push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
+</script>
+
+<!-- TalkJS initialization code, which we'll customize in the next steps -->
+<script>
+function runChat(){
+Talk.ready.then(function() {
+    document.getElementById('talkjs-container').style.height='500px';
+    var me = new Talk.User({
+        id: "123456",
+        name: "Alice",
+        email: "alice@example.com",
+        photoUrl: "https://demo.talkjs.com/img/alice.jpg",
+        welcomeMessage: "911, What is your emergency? "
+    });
+    window.talkSession = new Talk.Session({
+        appId: "tWKh5bMW",
+        me: me
+    });
+    var other = new Talk.User({
+        id: "654321",
+        name: "Sebastian",
+        email: "Sebastian@example.com",
+        photoUrl: "https://demo.talkjs.com/img/sebastian.jpg",
+        welcomeMessage: "911, What is your emergency?"
+    });
+
+    var conversation = talkSession.getOrCreateConversation(Talk.oneOnOneId(me, other))
+    conversation.setParticipant(me);
+    conversation.setParticipant(other);
+    var inbox = talkSession.createInbox({selected: conversation});
+    inbox.mount(document.getElementById("talkjs-container"));
+});
+}
+</script>
+</center>
+</body>
+</html>

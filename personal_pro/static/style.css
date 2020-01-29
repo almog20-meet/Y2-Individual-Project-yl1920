@@ -1,0 +1,28 @@
+
+body {font-family: "Raleway", Monospace}
+h1 {font-family: "Verdana", Sans-serif}
+body, html {height: 100%}
+
+.bgimg {
+  background-image: url('static/247.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
+	margin-top: 30px;
+	margin-right: 45px;
+	width: 120px;
+	height: 120px; 
+}
+
+.button{
+	width: 360px;
+	height: 100px;
+	background-color: red;
+	color:white;
+	border-radius: 12px;
+	font-size: 40px
+
+}
